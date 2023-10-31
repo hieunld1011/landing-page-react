@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
-import { Footer, Header } from '../components/shared'
-import Wrapper from '../components/common/Wrapper'
+import { Outlet } from 'react-router-dom';
+import { Footer, Header } from '../components/shared';
+import Wrapper from '../components/common/Wrapper';
 
 const SharedLayout = () => {
   return (
@@ -11,7 +11,7 @@ const SharedLayout = () => {
       </Wrapper>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default SharedLayout
+export default SharedLayout;

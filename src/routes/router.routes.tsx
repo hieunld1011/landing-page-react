@@ -1,6 +1,6 @@
-import { Routes as Router, Route } from 'react-router-dom'
-import { PATH_BLOG, PATH_CONTACT, PATH_HOME, PATH_USER_LOGIN } from './router.path'
-import SharedLayout from '../pages/SharedLayout'
+import { Routes as Router, Route } from 'react-router-dom';
+import { PATH_BLOG, PATH_CONTACT, PATH_HOME, PATH_USER_LOGIN } from './router.path';
+import SharedLayout from '../pages/SharedLayout';
 
 const Routes = () => {
   return (
@@ -13,7 +13,7 @@ const Routes = () => {
         {/* <Route path='/profile' element={<ProtectedRoute children={<ProfilePage />} />} /> */}
       </Route>
     </Router>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
