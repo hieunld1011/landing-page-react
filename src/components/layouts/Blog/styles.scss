@@ -1,0 +1,117 @@
+@use '../../../styles/abstracts' as abs;
+
+/* blog */
+.section_btn {
+  @include abs.section_btn_color(abs.$primary_white_color, abs.$third_btn_color);
+}
+
+.blog_main {
+  display: grid;
+  column-gap: 1.25rem;
+  row-gap: 5rem;
+
+  .blog_main_item {
+    background-color: abs.$primary_white_color;
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px #00000026;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-5%);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    label {
+      font-size: 0.75rem;
+      color: abs.$second_red_color;
+    }
+
+    p {
+      font-weight: 500;
+    }
+  }
+}
+
+.blog_pagination {
+  width: 100%;
+  align-items: center;
+
+  button {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  button:hover {
+    background-color: abs.$primary_link_color;
+    color: abs.$primary_white_color;
+  }
+
+  .button_pagination {
+    font-size: 1.25rem;
+  }
+
+  .button_pagination.active {
+    background-color: abs.$primary_link_color;
+    color: abs.$primary_white_color;
+  }
+
+  .button_pagination_mark {
+    transform: translateY(5%);
+  }
+}
+
+.blog_title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.blog_subtitle {
+  font-weight: 500;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.blog_email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog_subscribe {
+  background-color: abs.$primary_btn_color;
+  color: abs.$primary_white_color;
+  border-radius: 0.5rem;
+}
+
+.blog_input {
+  border-radius: 0.5rem;
+  width: 40%;
+}
+
+/* responsive */
+@media (min-width: 640px) {
+  .blog_main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .section_title {
+    font-size: 4rem;
+  }
+
+  .blog_main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

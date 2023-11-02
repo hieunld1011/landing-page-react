@@ -1,0 +1,86 @@
+@use '../../../styles/abstracts' as abs;
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_form {
+  max-width: 350px;
+}
+
+.login_wrapper_upper {
+  border: 1px solid rgb(219 219 219);
+
+  .login_wrapper_upper_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login_wrapper_upper_img {
+      width: 175px;
+      height: 51px;
+      background-image: url('../../../assets/images/logo.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    button {
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: rgb(0, 149, 246);
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  .login_wrapper_main_underline {
+    flex: 1 1 0%;
+    height: 1px;
+    width: 1px;
+    background-color: rgb(219, 219, 219);
+  }
+
+  .login_wrapper_main_text {
+    text-transform: uppercase;
+  }
+
+  .login_wrapper_main_fb {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    background-position: -414px -259px;
+    background-image: url('../../../assets/images/instagramIcon.png');
+  }
+
+  .login_wrapper_main_fb-text {
+    color: #385185;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.login_wrapper_lower {
+  flex-direction: column;
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  a img {
+    height: 40px;
+  }
+}

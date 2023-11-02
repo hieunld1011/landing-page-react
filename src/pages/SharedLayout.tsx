@@ -5,11 +5,11 @@ import Wrapper from '../components/common/Wrapper';
 const SharedLayout = () => {
   return (
     <>
-      <Header />
       <Wrapper>
+        <Header />
         <Outlet />
+        <Footer />
       </Wrapper>
-      <Footer />
     </>
   );
 };

@@ -1,0 +1,182 @@
+@use '../../styles/abstracts' as abs;
+
+main {
+  background-color: abs.$background_color;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto !important;
+  padding: 2rem 1rem;
+  width: 100% !important;
+}
+
+.bg-white {
+  background-color: abs.$primary_white_color;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  opacity: 1;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0px 2px 5px #00000026;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  .login_wrapper_title {
+    font-weight: 600;
+    text-align: center;
+    color: rgb(115, 115, 115);
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 0.75rem;
+    opacity: 0.95;
+    color: rgb(0, 55, 107);
+    text-decoration: none;
+  }
+
+  .login_wrapper_main {
+    display: flex;
+    flex-direction: column;
+
+    .login_btn {
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: abs.$primary_white_color;
+      width: 100%;
+      background-color: abs.$primary_link_color;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: abs.$background_sky_color;
+      }
+    }
+
+    button {
+      border-radius: 0.5rem;
+      width: 100%;
+      cursor: pointer;
+      background-color: abs.$primary_white_color;
+    }
+
+    label {
+      display: flex;
+      position: relative;
+      align-items: center;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.25rem;
+      min-height: 38px;
+      font-size: 0.75rem;
+
+      span {
+        position: absolute;
+        left: 0.5rem;
+        opacity: 0.8;
+        transition: all 0.2s;
+      }
+
+      .typing {
+        transform: scale(0.9) translateY(-0.75rem);
+        left: 5px;
+        margin-bottom: 0.25rem;
+      }
+
+      input {
+        min-width: 270px;
+        overflow: hidden;
+        outline: none;
+        background-color: rgb(250, 250, 250);
+        padding-top: 0.5rem;
+      }
+    }
+
+    .register_wrapper_main {
+      background-color: rgb(0, 149, 246);
+
+      .register_wrapper_main_fb {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        top: 3px;
+        display: inline-block;
+        background-position: -414px -300px;
+        background-image: url('../../assets/images/instagramIcon.png');
+      }
+
+      .register_wrapper_main_fb-text {
+        color: abs.$primary_white_color;
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+
+    .register_main_text {
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: rgb(115, 115, 115);
+
+      .register_main_text_wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .container {
+    max-width: 1080px;
+  }
+}

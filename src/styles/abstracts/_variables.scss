@@ -43,3 +43,8 @@ $directions: (
     }
   }
 }
+
+@mixin section_btn_color($color, $bg-color) {
+  color: $color;
+  background-color: $bg-color;
+}
