@@ -28,6 +28,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ setVariantValue }) => {
     try {
       data.password = bcrypt.hashSync(data.password, 8);
       sessionStorage.setItem('information', JSON.stringify(data));
+      sessionStorage.setItem('login', 'false');
       setVariantValue('LOGIN');
     } catch (error) {
       console.log('RegisterForm: ' + error);

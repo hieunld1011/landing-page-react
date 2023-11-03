@@ -10,11 +10,13 @@ import useRouteLinks from '../../../hooks/useRouteLinks';
 import Logo from '../../../assets/images/logo.png';
 import { PATH_USER_LOGIN } from '../../../routes/router.path';
 import Sidebar from './Sidebar';
+import DropdownBar from './DropdownBar';
 
 const Header: React.FC = () => {
   const headerLinks = useRouteLinks();
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [stickyBar, setStickyBar] = useState<boolean>(false);
+  const isLogin = JSON.parse(sessionStorage.getItem('login') || 'false');
 
   const handleClickOpenSidebar = () => {
     setIsNavOpen(!isNavOpen);
@@ -46,11 +48,15 @@ const Header: React.FC = () => {
             </div>
 
             <div className='header_wrapper_right'>
-              <Button>
-                <Link className='py-2 px-4' to={PATH_USER_LOGIN}>
-                  Login
-                </Link>
-              </Button>
+              {!isLogin ? (
+                <Button type='button'>
+                  <Link className='py-2 px-4' to={PATH_USER_LOGIN}>
+                    Login
+                  </Link>
+                </Button>
+              ) : (
+                <DropdownBar />
+              )}
               <Button
                 classBtn='header_toggle_button'
                 margin={'ml-7'}

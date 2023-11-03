@@ -1,6 +1,7 @@
+import bcrypt from 'bcryptjs';
 import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
-import bcrypt from 'bcryptjs';
+import { toast } from 'react-toastify';
 
 import Button from '../../common/Button';
 import Input from '../../common/Input';
@@ -8,6 +9,7 @@ import Input from '../../common/Input';
 const AuthForm: React.FC = () => {
   const regExpEmail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g);
   const navigate = useNavigate();
+  const { password, emailOrPhone } = JSON.parse(sessionStorage.getItem('information') || '{}');
 
   const {
     register,
@@ -23,9 +25,16 @@ const AuthForm: React.FC = () => {
 
   const submitHandler: SubmitHandler<FieldValues> = (data) => {
     try {
-      data.password = bcrypt.hashSync(data.password, 8);
-      sessionStorage.setItem('information', JSON.stringify(data));
-      navigate('/');
+      const isMatch =
+        emailOrPhone === data.emailOrPhone && bcrypt.compareSync(data.password, password);
+
+      if (isMatch) {
+        sessionStorage.setItem('login', 'true');
+        toast.success('Login sucessful!');
+        navigate('/');
+      } else {
+        toast.error('Authentication failed! Make sure you have registered then try again.');
+      }
     } catch (error) {
       console.log('AuthForm: ' + error);
     }

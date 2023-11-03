@@ -6,8 +6,81 @@
   justify-content: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
 .login_form {
   max-width: 350px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.login_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+}
+
+.login_icon {
+  margin-right: -4px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.scale-95 {
+  transform: scale(0.95);
+}
+
+.scale-100 {
+  transform: scale(1);
+}
+
+.block {
+  display: block;
+}
+
+.dropdown_container {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  width: 8rem;
+  transform-origin: top right;
+  background-color: abs.$primary_white_color;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 1px #ccc;
+  --tw-ring-opacity: 0.05;
+
+  &:focus {
+    outline: none;
+  }
+
+  button {
+    background-color: abs.$primary_white_color !important;
+    color: abs.$regular_black_color !important;
+  }
+
+  a {
+    background-color: abs.$primary_white_color;
+  }
 }
 
 .login_wrapper_upper {
